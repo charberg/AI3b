@@ -87,32 +87,32 @@ class Fold:
 
 
                 #Attempt to classify classes in test range
-            for j in range(0, len(self.class1)):
-                guess = self.classify(odds1, odds2, odds3, self.class1[j])
-                confusion[0][guess-1]+=1
-                guess2 = clf.predict([self.class1[j].getBinaryData()])[0]
-                confusion2[0][guess2-1]+=1
-                if guess == 1:
-                    correct[0]+=1
+        for j in range(0, len(self.class1)):
+            guess = self.classify(odds1, odds2, odds3, self.class1[j])
+            confusion[0][guess-1]+=1
+            guess2 = clf.predict([self.class1[j].getBinaryData()])[0]
+            confusion2[0][guess2-1]+=1
+            if guess == 1:
+                correct[0]+=1
 
-            for j in range(0, len(self.class2)):
-                guess = self.classify(odds1, odds2, odds3, self.class2[j])
-                confusion[1][guess-1]+=1
-                guess2 = clf.predict([self.class2[j].getBinaryData()])[0]
-                confusion2[1][guess2-1]+=1
-                if guess == 2:
-                    correct[1]+=1
+        for j in range(0, len(self.class2)):
+            guess = self.classify(odds1, odds2, odds3, self.class2[j])
+            confusion[1][guess-1]+=1
+            guess2 = clf.predict([self.class2[j].getBinaryData()])[0]
+            confusion2[1][guess2-1]+=1
+            if guess == 2:
+                correct[1]+=1
 
-            for j in range(0, len(self.class3)):
-                guess = self.classify(odds1, odds2, odds3, self.class3[j])
-                confusion[2][guess-1]+=1
-                guess2 = clf.predict([self.class3[j].getBinaryData()])[0]
-                confusion2[2][guess2-1]+=1
-                if guess == 3:
-                    correct[2]+=1
+        for j in range(0, len(self.class3)):
+            guess = self.classify(odds1, odds2, odds3, self.class3[j])
+            confusion[2][guess-1]+=1
+            guess2 = clf.predict([self.class3[j].getBinaryData()])[0]
+            confusion2[2][guess2-1]+=1
+            if guess == 3:
+                correct[2]+=1
 
 
-        print(correct)
+        print(len(self.class1))
         self.printConfusion(confusion)
         self.printConfusion(confusion2)
 
